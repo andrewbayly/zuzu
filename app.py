@@ -1,6 +1,6 @@
 from flask import Flask
-#from pymongo.mongo_client import MongoClient
-#from pymongo.server_api import ServerApi
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
 
 app = Flask(__name__)
 
