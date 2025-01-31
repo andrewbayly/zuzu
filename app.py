@@ -1,11 +1,14 @@
 from flask import Flask
-from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
+#from pymongo.mongo_client import MongoClient
+#from pymongo.server_api import ServerApi
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
+    return "Hello World!"
+
+    """
     uri = "mongodb+srv://andrewbayly:AtDyeI6JzqPaTj8n@cluster0.8npn5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     # Create a new client and connect to the server
     try: 
@@ -20,3 +23,5 @@ def hello_world():
     except Exception as e:
         return(e)
 
+    """
+    
