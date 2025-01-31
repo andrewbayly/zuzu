@@ -8,7 +8,11 @@ app = Flask(__name__)
 def hello_world():
     uri = "mongodb+srv://andrewbayly:AtDyeI6JzqPaTj8n@cluster0.8npn5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     # Create a new client and connect to the server
-    client = MongoClient(uri, server_api=ServerApi('1'))
+    try: 
+        client = MongoClient(uri, server_api=ServerApi('1'))
+    except Exception as e:
+        return(e)
+    
     # Send a ping to confirm a successful connection
     try:
         client.admin.command('ping')
