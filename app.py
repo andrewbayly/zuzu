@@ -12,17 +12,14 @@ def hello_world():
     # Create a new client and connect to the server
     try: 
         client = MongoClient(uri, server_api=ServerApi('1'))
-        return("client created")
+        #return("client created")
     except Exception as e:
         return(e)
 
-    """
+    
     # Send a ping to confirm a successful connection
     try:
         client.admin.command('ping')
         return("Pinged your deployment. You successfully connected to MongoDB!")
     except Exception as e:
         return(e)
-
-    """
-    
