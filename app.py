@@ -6,16 +6,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return "Hello World!"
+    #return "Hello World!"
 
-    """
     uri = "mongodb+srv://andrewbayly:AtDyeI6JzqPaTj8n@cluster0.8npn5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     # Create a new client and connect to the server
     try: 
         client = MongoClient(uri, server_api=ServerApi('1'))
+        return("client created")
     except Exception as e:
         return(e)
-    
+
+    """
     # Send a ping to confirm a successful connection
     try:
         client.admin.command('ping')
