@@ -2,13 +2,12 @@ from flask import Flask
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from flask import render_template
-import socketio
+from flask_socketio import SocketIO
 
 app = Flask(__name__)
 
-sio = socketio.AsyncServer()
-
-sio.attach(app)
+app.config['SECRET_KEY'] = 'secret!'
+socketio = SocketIO(app)
 
 """
 @app.route('/')
@@ -54,8 +53,8 @@ async def print_message(sid, message):
 
 # run the application 
 if __name__ == "__main__": 
-    app.run(debug=True)
-
+    #app.run(debug=True)
+    socketio.run(app)
 
 
 
