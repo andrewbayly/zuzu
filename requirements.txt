@@ -1,4 +1,4 @@
 Flask
 Gunicorn
 pymongo
-flask-socketio==4.0.1
+flask-socketio==4.0.0
