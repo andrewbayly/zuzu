@@ -42,19 +42,7 @@ def hello():
     #message = "Hello, World"
     return render_template('index.html') 
 
-@sio.on('message')
-async def print_message(sid, message):
-    ## When we receive a new event of type
-    ## 'message' through a socket.io connection
-    ## we print the socket ID and the message
-    print("Socket ID: " , sid)
-    print(message)
-
-
 # run the application 
 if __name__ == "__main__": 
     #app.run(debug=True)
     socketio.run(app)
-
-
-
