@@ -4,6 +4,7 @@ from pymongo.server_api import ServerApi
 
 app = Flask(__name__)
 
+"""
 @app.route('/')
 def hello_world():
     #return "Hello World!"
@@ -23,3 +24,23 @@ def hello_world():
         return("Pinged your deployment. You successfully connected to MongoDB!")
     except Exception as e:
         return(e)
+
+from flask import Flask 
+from flask import render_template 
+  
+# creates a Flask application 
+app = Flask(__name__) 
+"""  
+  
+@app.route("/") 
+def hello(): 
+    #message = "Hello, World"
+    return render_template('index.html') 
+  
+# run the application 
+if __name__ == "__main__": 
+    app.run(debug=True)
+
+
+
+
