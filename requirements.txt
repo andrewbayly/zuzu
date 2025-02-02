@@ -1,4 +1,4 @@
 Flask
 Gunicorn
 pymongo
-python-socketio
+flask-socketio
