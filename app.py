@@ -2,8 +2,13 @@ from flask import Flask
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from flask import render_template
+import socketio
 
 app = Flask(__name__)
+
+sio = socketio.AsyncServer()
+
+sio.attach(app)
 
 """
 @app.route('/')
@@ -37,7 +42,16 @@ app = Flask(__name__)
 def hello(): 
     #message = "Hello, World"
     return render_template('index.html') 
-  
+
+@sio.on('message')
+async def print_message(sid, message):
+    ## When we receive a new event of type
+    ## 'message' through a socket.io connection
+    ## we print the socket ID and the message
+    print("Socket ID: " , sid)
+    print(message)
+
+
 # run the application 
 if __name__ == "__main__": 
     app.run(debug=True)
