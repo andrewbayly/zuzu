@@ -36,6 +36,11 @@ from flask import render_template
 # creates a Flask application 
 app = Flask(__name__) 
 """  
+
+@socketio.on('message')
+def handle_message(data):
+    send(data)
+    #print('received message: ' + data)
   
 @app.route("/") 
 def hello(): 
